@@ -7,9 +7,20 @@ class variables {
 		string txt_inp;
 		string txt_op;
 		string txt_result;
+		
 		int n1;
 		char op;
 		int n2;
+
+		int calculate() {
+			switch (op) {
+				case '+': return n1 + n2;
+				case '-': return n1 - n2;
+				case '*': return n1 * n2;
+				case '/': return n1 / n2;
+				default: return 0;
+			}
+		}
 };
 
 int main() {
@@ -28,23 +39,9 @@ int main() {
 	cout << var.txt_inp;
 	cin >> var.n2;
 
-	switch (var.op) {
-		case '+':
-			cout << var.txt_result << var.n1 + var.n2 << endl;
-			break;
+	int result = var.calculate();
 
-		case '-':
-			cout << var.txt_result << var.n1 - var.n2 << endl;
-			break;
-
-		case '*':
-			cout << var.txt_result << var.n1 * var.n2 << endl;
-			break;
-
-		case '/':
-			cout << var.txt_result << var.n1 / var.n2 << endl;
-			break;
-	}
+	cout << var.txt_result << result << endl;
 	
 	return 0;
 }
